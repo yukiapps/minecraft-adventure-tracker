@@ -5,6 +5,8 @@ const gear=[
  ['万能の剣','⚔️',[E('ダメージ増加',5),E('ドロップ増加',3),...durability]],
  ['アンデッド特効の剣','⚔️',[E('アンデッド特効',5),E('ドロップ増加',3),...durability]],
  ['突撃の槍','🔱',[E('ダメージ増加',5),E('ランジ',3),...durability]],
+ ['忠誠・召雷のトライデント','🔱',[E('水生特効',5),E('忠誠',3),E('召雷',1),...durability]],
+ ['激流のトライデント','🔱',[E('水生特効',5),E('激流',3),...durability]],
  ['一撃必殺のメイス','🔨',[E('密度',5),E('ウィンドバースト',3),...durability]],
  ['無限の弓','🏹',[E('射撃ダメージ増加',5),E('無限',1),E('耐久力',3),E('フレイム',1),E('パンチ',2)]],
  ['修繕の弓','🏹',[E('射撃ダメージ増加',5),E('修繕',1),E('耐久力',3),E('フレイム',1),E('パンチ',2)]],
@@ -23,7 +25,7 @@ const gear=[
  ['盾','🛡️',[...durability]]
 ].map(([name,icon,enchants],id)=>({id,name,icon,enchants}));
 const structures=[['古代都市','ancient_city','オーバーワールド'],['森の洋館','mansion','オーバーワールド'],['海底神殿','monument','オーバーワールド'],['試練の間','trial_chambers','オーバーワールド'],['要塞（エンドポータル）','stronghold','オーバーワールド'],['村（平原）','village_plains','オーバーワールド'],['廃坑','mineshaft','オーバーワールド'],['砂漠のピラミッド','desert_pyramid','オーバーワールド'],['ジャングルの寺院','jungle_pyramid','オーバーワールド'],['ネザー要塞','fortress','ネザー'],['砦の遺跡','bastion_remnant','ネザー'],['エンドシティ','end_city','エンド']];
-const gearCategory=id=>id<=6?'weapon':id<=12||id===18?'armor':'tool';
+const gearCategory=id=>id<=8?'weapon':id<=14||id===20?'armor':'tool';
 const STORAGE='minecraft-adventure-tracker-v1',THEME='minecraft-adventure-theme-v1',BACKUP='minecraft-adventure-before-import-v1';
 const $=id=>document.getElementById(id);const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const emptyData=()=>({version:1,gear:{},places:[],savedAt:null});
