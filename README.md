@@ -1,3 +1,12 @@
+## v1.1 更新内容
+
+- 盾（耐久力 III・修繕 I）を追加。装備19個・エンチャント79項目。
+- すべて／武器／防具／道具のカテゴリ切り替えを追加。
+- iPhone Safariで設定ダイアログの横ずれ対策とスクロール改善。
+- JSON読み込みボタンを統一。
+- **重要：既存のlocalStorageキー `minecraft-adventure-tracker-v1` とJSON形式version 1を維持。既存データは引き継がれます。**
+- GitHubにはZIPを展開した4ファイルをリポジトリ直下に上書きアップロードしてください。更新前にJSONバックアップを取ってください。
+
 # Minecraft Adventure Tracker
 
 Minecraft 統合版向けの個人用装備・探索管理サイト。静的サイトなので GitHub Pages で公開できます。
