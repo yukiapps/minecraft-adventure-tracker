@@ -4,7 +4,7 @@ const durability=[E('耐久力',3),E('修繕',1)];
 const gear=[
  ['万能の剣','⚔️',[E('ダメージ増加',5),E('ドロップ増加',3),...durability]],
  ['アンデッド特効の剣','⚔️',[E('アンデッド特効',5),E('ドロップ増加',3),...durability]],
- ['突撃の槍','🔱',[E('ダメージ増加',5),E('ランジ',3),...durability]],
+ ['突撃の槍','🔱',[E('ダメージ増加',5),E('突進',3),...durability]],
  ['一撃必殺のメイス','🔨',[E('密度',5),E('ウィンドバースト',3),...durability]],
  ['無限の弓','🏹',[E('射撃ダメージ増加',5),E('無限',1),E('耐久力',3),E('フレイム',1),E('パンチ',2)]],
  ['修繕の弓','🏹',[E('射撃ダメージ増加',5),E('修繕',1),E('耐久力',3),E('フレイム',1),E('パンチ',2)]],
@@ -20,16 +20,18 @@ const gear=[
  ['シャベル','🪏',[E('効率強化',5),E('シルクタッチ',1),...durability]],
  ['斧','🪓',[E('効率強化',5),E('シルクタッチ',1),...durability]],
  ['釣竿','🎣',[E('宝釣り',3),E('入れ食い',3),...durability]],
- ['盾','🛡️',[...durability]]
+ ['盾','🛡️',[...durability]],
+ ['忠誠のトライデント','🔱',[E('忠誠',3),E('水生特効',5),E('召雷',1),...durability]],
+ ['激流のトライデント','🔱',[E('激流',3),E('水生特効',5),...durability]]
 ].map(([name,icon,enchants],id)=>({id,name,icon,enchants}));
 const structures=[['古代都市','ancient_city','オーバーワールド'],['森の洋館','mansion','オーバーワールド'],['海底神殿','monument','オーバーワールド'],['試練の間','trial_chambers','オーバーワールド'],['要塞（エンドポータル）','stronghold','オーバーワールド'],['村（平原）','village_plains','オーバーワールド'],['廃坑','mineshaft','オーバーワールド'],['砂漠のピラミッド','desert_pyramid','オーバーワールド'],['ジャングルの寺院','jungle_pyramid','オーバーワールド'],['ネザー要塞','fortress','ネザー'],['砦の遺跡','bastion_remnant','ネザー'],['エンドシティ','end_city','エンド']];
 const OPTIONAL={0:[E('火属性',2),E('ノックバック',2)],1:[E('火属性',2),E('ノックバック',2)],7:[E('棘の鎧',3)],8:[E('棘の鎧',3)],9:[E('棘の鎧',3)],10:[E('棘の鎧',3)],11:[E('棘の鎧',3),E('ソウルスピード',3)],12:[E('棘の鎧',3),E('ソウルスピード',3)],16:[E('ダメージ増加',5)]};
-const gearCategory=id=>id<=6?'weapon':id<=12||id===18?'armor':'tool';
+const gearCategory=id=>id<=6||id===19||id===20?'weapon':id<=12||id===18?'armor':'tool';
 const STORAGE='minecraft-adventure-tracker-v1',THEME='minecraft-adventure-theme-v1',BACKUP='minecraft-adventure-before-import-v1';
 const $=id=>document.getElementById(id);const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const emptyData=()=>({version:1,gear:{},places:[],savedAt:null});
 let data=emptyData(),editGear=null,editPlace=null,toastTimer;
-try{const v=JSON.parse(localStorage.getItem(STORAGE)||'null');if(v&&v.version===1&&v.gear&&Array.isArray(v.places))data=v;}catch(e){console.warn('保存データの読み込みに失敗しました',e)}
+try{const v=JSON.parse(localStorage.getItem(STORAGE)||'null');if(v&&v.version===1&&v.gear&&Array.isArray(v.places)){data=v;if(data.gear[2]&&Object.hasOwn(data.gear[2],'ランジ')){data.gear[2]['突進']=data.gear[2]['ランジ'];delete data.gear[2]['ランジ'];}}}catch(e){console.warn('保存データの読み込みに失敗しました',e)}
 function save(){data.savedAt=new Date().toISOString();try{localStorage.setItem(STORAGE,JSON.stringify(data))}catch(e){toast('保存に失敗しました。空き容量をご確認ください。')}updateSavedAt()}
 function toast(message){const el=$('toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2600)}
 function themeApply(mode){document.documentElement.dataset.theme=mode==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):mode;document.querySelectorAll('input[name="theme"]').forEach(i=>i.checked=i.value===mode)}
