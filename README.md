@@ -44,3 +44,20 @@ GitHub の `https://github.com/yukiapps/minecraft-adventure-tracker/upload/main`
 ## v2.2.1 修正
 - iOS Safariで装備詳細・設定ダイアログが表示領域外に移動する可能性のあるスクロール固定を修正。
 - 開いている装備ダイアログを再描画する際に showModal() を重複実行しないよう修正。
+
+## v2.2.3 操作不具合修正
+- 起動時の `selectedStructure` 初期化前参照を解消。途中停止により設定・探索・ダイアログ終了処理が登録されない問題を修正。
+- オプションエンチャントを選ぶと、その場でレベルを入力可能。
+- 金床プランナーのタブ切替時に、選択した本のレベルと必要冊数を維持。
+- 保存形式・装備ID・計算エンジンは変更なし。CSSの追加変更もなし。
+
+### 回帰テスト
+Node.jsとPlaywrightが必要です。
+
+```sh
+npm install --no-save playwright@1.64.1
+npx playwright install --with-deps webkit
+node tests/mobile.cjs
+```
+
+テストは一時HTTPサーバーと独立したブラウザ保存領域を使用します。iPhone 13・iPad相当のWebKitで、初期表示、ページスクロール、装備保存、オプション入力、プランナー、設定、探索記録、JSON往復、実行時エラーを確認します。実機Safariでのタッチ操作を保証するテストではありません。
