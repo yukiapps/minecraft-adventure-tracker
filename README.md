@@ -39,3 +39,8 @@ GitHub の `https://github.com/yukiapps/minecraft-adventure-tracker/upload/main`
 - 装備編集から個別装備の進捗だけをリセット可能。
 - JSON復元時のオプションエンチャント設定の引き継ぎを修正。
 - iPhoneで古い画面が出る場合は、URL末尾に `?v=22` を付けて再読み込み。
+
+
+## v2.2.1 修正
+- iOS Safariで装備詳細・設定ダイアログが表示領域外に移動する可能性のあるスクロール固定を修正。
+- 開いている装備ダイアログを再描画する際に showModal() を重複実行しないよう修正。

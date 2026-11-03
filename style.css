@@ -13,3 +13,7 @@ dialog:not([open]){display:none}dialog .dialog-head{position:sticky;top:-20px;ba
 /* v2.2: reset controls */
 .reset-section{margin-top:18px;padding-top:14px;border-top:1px solid var(--line,#48534b)}
 .setting-block button + button{margin-top:9px}
+
+/* v2.2.1: iOS Safari modal scroll lock without moving dialog off-screen */
+html.modal-visible{overflow:hidden}
+body.modal-open{position:static!important;top:auto!important;overflow:visible!important}
