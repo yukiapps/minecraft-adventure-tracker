@@ -17,3 +17,7 @@ dialog:not([open]){display:none}dialog .dialog-head{position:sticky;top:-20px;ba
 /* v2.2.1: iOS Safari modal scroll lock without moving dialog off-screen */
 html.modal-visible{overflow:hidden}
 body.modal-open{position:static!important;top:auto!important;overflow:visible!important}
+
+/* v2.2.5: librarian trade availability */
+.enchant-ready{color:#63b7ff!important}.enchant-missing{color:#f38acb!important}.enchant-explore{color:#b5a1ff!important}
+.librarian-guide{line-height:1.9}.librarian-book{align-items:center;min-height:70px}.librarian-book>div{flex:1;min-width:0}.librarian-book strong{display:block}.librarian-book small{display:block;font-size:11px;margin-top:3px}.librarian-select-label{margin:0;display:flex;flex-direction:column;align-items:flex-end;font-size:11px;white-space:nowrap;color:var(--muted)}.librarian-select-label select{width:104px;min-height:36px;padding:5px 7px;margin-top:3px}.book-explore{color:#b5a1ff;font-size:12px;white-space:nowrap}.enchant-line strong{transition:color .12s}
