@@ -46,3 +46,6 @@ body.modal-open{position:static!important;top:auto!important;overflow:visible!im
 
 /* Crop the command-block front texture to a single face. */
 .bottom-nav button[data-page="command"] img{object-fit:cover;object-position:center}
+
+/* Keep the command block icon in line with the other bottom navigation icons. */
+.bottom-nav button[data-page="command"] img{width:26px;height:26px}
