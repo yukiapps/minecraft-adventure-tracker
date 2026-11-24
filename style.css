@@ -36,3 +36,6 @@ body.modal-open{position:static!important;top:auto!important;overflow:visible!im
 .ui-item-icon{width:24px;height:24px;image-rendering:pixelated;object-fit:contain;vertical-align:middle;margin-right:7px}
 .bottom-nav button img{display:block;width:30px;height:30px;object-fit:contain;image-rendering:pixelated;margin:0 auto 5px}
 @media(max-width:600px){.bottom-nav button img{width:28px;height:28px}.category-tab,.collection-tab{white-space:nowrap}.ui-item-icon{width:20px;height:20px;margin-right:4px}}
+/* Custom pixel-art settings emblem and compact Minecraft block textures */
+.settings-heading-icon{width:1.25em;height:1.25em;object-fit:contain;image-rendering:pixelated;vertical-align:-.22em;margin-right:.35em}
+.bottom-nav button img{width:32px;height:32px;object-fit:contain;image-rendering:pixelated}
