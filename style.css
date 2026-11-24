@@ -48,4 +48,4 @@ body.modal-open{position:static!important;top:auto!important;overflow:visible!im
 .bottom-nav button[data-page="command"] img{object-fit:cover;object-position:center}
 
 /* Keep the command block icon in line with the other bottom navigation icons. */
-.bottom-nav button[data-page="command"] img{width:26px;height:26px}
+.bottom-nav button[data-page="command"] img{width:32px;height:32px;transform:scale(.8125)}
