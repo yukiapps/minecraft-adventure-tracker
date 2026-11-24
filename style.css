@@ -40,11 +40,9 @@ body.modal-open{position:static!important;top:auto!important;overflow:visible!im
 .settings-heading-icon{width:1.25em;height:1.25em;object-fit:contain;image-rendering:pixelated;vertical-align:-.22em;margin-right:.35em}
 .bottom-nav button img{width:32px;height:32px;object-fit:contain;image-rendering:pixelated}
 
-/* Make the settings emblem larger and remove its button tile. */
-#settingsBtn{background:transparent;width:58px;height:58px;padding:4px}
-#settingsBtn img{width:48px;height:48px}
-@media(max-width:600px){#settingsBtn{width:56px;height:56px}#settingsBtn img{width:46px;height:46px}}
+/* Keep the settings emblem frameless and slightly larger than its original size. */
+#settingsBtn{background:transparent;width:48px;height:48px;padding:2px}
+#settingsBtn img{width:44px;height:44px;max-width:none}
 
-/* The command-block front texture is a vertical 4-face strip; crop it to one tile. */
+/* Crop the command-block front texture to a single face. */
 .bottom-nav button[data-page="command"] img{object-fit:cover;object-position:center}
-#settingsBtn img{width:68px;height:68px;max-width:none}
