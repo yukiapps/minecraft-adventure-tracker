@@ -39,3 +39,8 @@ body.modal-open{position:static!important;top:auto!important;overflow:visible!im
 /* Custom pixel-art settings emblem and compact Minecraft block textures */
 .settings-heading-icon{width:1.25em;height:1.25em;object-fit:contain;image-rendering:pixelated;vertical-align:-.22em;margin-right:.35em}
 .bottom-nav button img{width:32px;height:32px;object-fit:contain;image-rendering:pixelated}
+
+/* Make the settings emblem larger and remove its button tile. */
+#settingsBtn{background:transparent;width:58px;height:58px;padding:4px}
+#settingsBtn img{width:48px;height:48px}
+@media(max-width:600px){#settingsBtn{width:56px;height:56px}#settingsBtn img{width:46px;height:46px}}
