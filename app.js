@@ -2,28 +2,29 @@
 const E=(name,max)=>({name,max});
 const durability=[E('耐久力',3),E('修繕',1)];
 const gear=[
- ['万能の剣','⚔️',[E('ダメージ増加',5),E('ドロップ増加',3),...durability]],
- ['アンデッド特効の剣','⚔️',[E('アンデッド特効',5),E('ドロップ増加',3),...durability]],
- ['突撃の槍','🔱',[E('ダメージ増加',5),E('突進',3),...durability]],
- ['一撃必殺のメイス','🔨',[E('密度',5),E('爆風',3),...durability]],
- ['無限の弓','🏹',[E('射撃ダメージ増加',5),E('無限',1),E('耐久力',3)]],
- ['爆撃クロスボウ','🏹',[E('拡散',1),E('高速装填',3),...durability]],
- ['対飛び道具用ヘルメット','🪖',[E('飛び道具耐性',4),E('水中呼吸',3),E('水中採掘',1),...durability]],
- ['万能防御用ヘルメット','🪖',[E('ダメージ軽減',4),E('水中呼吸',3),E('水中採掘',1),...durability]],
- ['チェストプレート','🛡️',[E('ダメージ軽減',4),...durability]],
- ['レギンス','🛡️',[E('ダメージ軽減',4),E('高速スニーク',3),...durability]],
- ['水中歩行用ブーツ','🥾',[E('ダメージ軽減',4),E('落下耐性',4),E('水中歩行',3),...durability]],
- ['氷渡り用ブーツ','🥾',[E('ダメージ軽減',4),E('落下耐性',4),E('氷渡り',2),...durability]],
- ['幸運のツルハシ','⛏️',[E('効率強化',5),E('幸運',3),...durability]],
- ['シルクタッチのツルハシ','⛏️',[E('効率強化',5),E('シルクタッチ',1),...durability]],
- ['シャベル','🪏',[E('効率強化',5),E('シルクタッチ',1),...durability]],
- ['斧','🪓',[E('効率強化',5),E('シルクタッチ',1),...durability]],
- ['釣竿','🎣',[E('宝釣り',3),E('入れ食い',3),...durability]],
- ['盾','🛡️',[...durability]],
- ['忠誠のトライデント','🔱',[E('忠誠',3),E('水生特効',5),E('召雷',1),...durability]],
- ['激流のトライデント','🔱',[E('激流',3),E('水生特効',5),...durability]],
- ['エリトラ','🪽',[...durability]]
-].map(([name,icon,enchants],index)=>({id:index>=5?index+1:index,name,icon,enchants}));
+ [0,'万能の剣','⚔️',[E('ダメージ増加',5),E('ドロップ増加',3),...durability]],
+ [1,'アンデッド特効の剣','⚔️',[E('アンデッド特効',5),E('ドロップ増加',3),...durability]],
+ [2,'突撃の槍','🔱',[E('ダメージ増加',5),E('突進',3),E('ドロップ増加',3),...durability]],
+ [3,'一撃必殺のメイス','🔨',[E('密度',5),E('爆風',3),...durability]],
+ [4,'無限の弓','🏹',[E('射撃ダメージ増加',5),E('無限',1),E('耐久力',3)]],
+ [6,'爆撃クロスボウ','🏹',[E('拡散',1),E('高速装填',3),...durability]],
+ [8,'万能防御用ヘルメット','🪖',[E('ダメージ軽減',4),E('水中呼吸',3),E('水中採掘',1),...durability]],
+ [9,'チェストプレート','🛡️',[E('ダメージ軽減',4),...durability]],
+ [10,'レギンス','🛡️',[E('ダメージ軽減',4),E('高速スニーク',3),...durability]],
+ [11,'水中歩行用ブーツ','🥾',[E('ダメージ軽減',4),E('落下耐性',4),E('水中歩行',3),...durability]],
+ [12,'氷渡り用ブーツ','🥾',[E('ダメージ軽減',4),E('落下耐性',4),E('氷渡り',2),...durability]],
+ [13,'幸運のツルハシ','⛏️',[E('効率強化',5),E('幸運',3),...durability]],
+ [14,'シルクタッチのツルハシ','⛏️',[E('効率強化',5),E('シルクタッチ',1),...durability]],
+ [15,'シャベル','🪏',[E('効率強化',5),E('シルクタッチ',1),...durability]],
+ [16,'斧','🪓',[E('効率強化',5),E('シルクタッチ',1),...durability]],
+ [17,'釣竿','🎣',[E('宝釣り',3),E('入れ食い',3),...durability]],
+ [18,'盾','🛡️',[...durability]],
+ [19,'忠誠のトライデント','🔱',[E('忠誠',3),E('水生特効',5),E('召雷',1),...durability]],
+ [20,'激流のトライデント','🔱',[E('激流',3),E('水生特効',5),...durability]],
+ [21,'エリトラ','🪽',[...durability]],
+ [22,'ソウルスピード用ブーツ','🥾',[E('ダメージ軽減',4),E('落下耐性',4),E('ソウルスピード',3),...durability]],
+ [23,'ネザー用金ヘルメット','🪖',[E('火炎耐性',4),...durability]]
+].map(([id,name,icon,enchants])=>({id,name,icon,enchants}));
 const structures=[
  ['略奪者の前哨基地','pillager_outpost','地上'],['森の洋館','mansion','地上'],['海底神殿','monument','海洋'],['難破船','shipwreck','海洋'],['海底遺跡','ocean_ruin','海洋'],['埋もれた宝','buried_treasure','海洋'],
  ['村（平原）','village_plains','地上'],['村（砂漠）','village_desert','地上'],['村（サバンナ）','village_savanna','地上'],['村（タイガ）','village_taiga','地上'],['村（雪原）','village_snowy','地上'],
@@ -31,8 +32,9 @@ const structures=[
  ['古代都市','ancient_city','地下'],['試練の間','trial_chambers','地下'],['要塞（エンドポータル）','stronghold','地下'],['廃坑','mineshaft','地下'],['トレイル遺跡','trail_ruins','地下'],
  ['ネザー要塞','fortress','ネザー'],['砦の遺跡','bastion_remnant','ネザー'],['荒廃したポータル（ネザー）','ruined_portal','ネザー'],['エンドシティ','end_city','エンド']
 ];
-const OPTIONAL={4:[E('フレイム',1),E('パンチ',2)],0:[E('火属性',2),E('ノックバック',2)],1:[E('火属性',2),E('ノックバック',2)],7:[E('棘の鎧',3)],8:[E('棘の鎧',3)],9:[E('棘の鎧',3)],10:[E('棘の鎧',3)],11:[E('棘の鎧',3),E('ソウルスピード',3)],12:[E('棘の鎧',3),E('ソウルスピード',3)],16:[E('ダメージ増加',5)]};
-const gearCategory=id=>id<=6||id===19||id===20?'weapon':id<=12||id===18||id===21?'armor':'tool';
+const OPTIONAL={4:[E('フレイム',1),E('パンチ',2)],0:[E('火属性',2),E('ノックバック',2)],1:[E('火属性',2),E('ノックバック',2)],7:[E('棘の鎧',3)],8:[E('棘の鎧',3)],9:[E('棘の鎧',3)],10:[E('棘の鎧',3)],11:[E('棘の鎧',3)],12:[E('棘の鎧',3)],16:[E('ダメージ増加',5)]};
+const LEGACY_GEAR={7:[E('飛び道具耐性',4),E('水中呼吸',3),E('水中採掘',1),...durability,E('棘の鎧',3)]};
+const gearCategory=id=>id<=6||id===19||id===20?'weapon':id<=12||id===18||id===21||id===22||id===23?'armor':'tool';
 const gearById=id=>gear.find(g=>g.id===Number(id));
 function migrateEnchantNames(v){if(v?.gear?.[3]&&Object.hasOwn(v.gear[3],'ウィンドバースト')){if(!Object.hasOwn(v.gear[3],'爆風'))v.gear[3]['爆風']=v.gear[3]['ウィンドバースト'];delete v.gear[3]['ウィンドバースト']}return v}
 const STORAGE='minecraft-adventure-tracker-v1',THEME='minecraft-adventure-theme-v1',BACKUP='minecraft-adventure-before-import-v1';
@@ -83,7 +85,7 @@ document.querySelectorAll('dialog').forEach(d=>d.addEventListener('close',unlock
 function openModal(d){if(d.open)return;d.showModal();lockPage()}
 $('settingsBtn').addEventListener('click',()=>openModal($('settingsDialog')));document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));function updateSavedAt(){$('savedAt').textContent=data.savedAt?`最終保存：${new Date(data.savedAt).toLocaleString('ja-JP')}`:'まだ保存された変更はありません'}
 $('exportBtn').addEventListener('click',()=>{const text=JSON.stringify({...data,exportedAt:new Date().toISOString()},null,2);const blob=new Blob([text],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`minecraft-backup-${new Date().toLocaleDateString('sv-SE')}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);toast('バックアップを書き出しました')});
-function validateImport(v){if(!v||v.version!==1||!v.gear||typeof v.gear!=='object'||Array.isArray(v.gear)||!Array.isArray(v.places)||v.places.length>10000)return false;for(const p of v.places){if(!p||typeof p.id!=='string'||typeof p.name!=='string'||p.name.length>200||typeof p.type!=='string'||typeof p.dimension!=='string'||!['オーバーワールド','ネザー','エンド'].includes(p.dimension)||!['未訪問','到達済み','攻略済み'].includes(p.status)||![p.x,p.y,p.z].every(n=>typeof n==='number'&&Number.isFinite(n))||typeof p.memo!=='string'||p.memo.length>10000)return false}for(const [id,levels] of Object.entries(v.gear)){const g=gearById(id);if(Number(id)===5)continue;if(!g||!levels||typeof levels!=='object'||Array.isArray(levels))return false;for(const [name,n] of Object.entries(levels)){const e=[...g.enchants,...(OPTIONAL[g.id]||[])].find(e=>e.name===name);if(!e&&Number(id)===3&&name==='ウィンドバースト'){if(!Number.isInteger(n)||n<0||n>3)return false;continue}if(!e||!Number.isInteger(n)||n<0||n>e.max)return false}}return true}
+function validateImport(v){if(!v||v.version!==1||!v.gear||typeof v.gear!=='object'||Array.isArray(v.gear)||!Array.isArray(v.places)||v.places.length>10000)return false;for(const p of v.places){if(!p||typeof p.id!=='string'||typeof p.name!=='string'||p.name.length>200||typeof p.type!=='string'||typeof p.dimension!=='string'||!['オーバーワールド','ネザー','エンド'].includes(p.dimension)||!['未訪問','到達済み','攻略済み'].includes(p.status)||![p.x,p.y,p.z].every(n=>typeof n==='number'&&Number.isFinite(n))||typeof p.memo!=='string'||p.memo.length>10000)return false}for(const [id,levels] of Object.entries(v.gear)){const g=gearById(id);const legacy=LEGACY_GEAR[Number(id)];if(Number(id)===5)continue;if((!g&&!legacy)||!levels||typeof levels!=='object'||Array.isArray(levels))return false;for(const [name,n] of Object.entries(levels)){const e=[...(g?g.enchants:legacy),...(g?(OPTIONAL[g.id]||[]):[])].find(e=>e.name===name);if(!e&&Number(id)===3&&name==='ウィンドバースト'){if(!Number.isInteger(n)||n<0||n>3)return false;continue}if(!e||!Number.isInteger(n)||n<0||n>e.max)return false}}return true}
 $('importFile').addEventListener('change',async e=>{const file=e.target.files[0];e.target.value='';if(!file)return;if(file.size>3*1024*1024)return toast('JSONファイルが大きすぎます（上限3MB）');let parsed;try{parsed=JSON.parse(await file.text())}catch(err){return toast('JSONを読み込めませんでした')}if(!validateImport(parsed))return toast('対応していないバックアップ形式です');if(!confirm(`装備と探索記録を読み込んだデータで置き換えます。\n探索記録：${parsed.places.length}件\n\n現在のデータはこの端末内に退避します。続けますか？`))return;try{localStorage.setItem(BACKUP,JSON.stringify(data));const next=migrateEnchantNames({version:1,gear:parsed.gear,options:parsed.options||{},places:parsed.places,savedAt:null});localStorage.setItem(STORAGE,JSON.stringify({...next,savedAt:new Date().toISOString()}));data=next;save();renderGear();renderPlaces();$('settingsDialog').close();toast('バックアップを復元しました')}catch(err){toast('保存容量が不足している可能性があります')}});
 // アプリのキャッシュのみを削除。保存済みの登録データには触れない。
 $('clearCacheBtn').addEventListener('click',async()=>{
