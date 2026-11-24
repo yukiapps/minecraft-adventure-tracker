@@ -44,3 +44,7 @@ body.modal-open{position:static!important;top:auto!important;overflow:visible!im
 #settingsBtn{background:transparent;width:58px;height:58px;padding:4px}
 #settingsBtn img{width:48px;height:48px}
 @media(max-width:600px){#settingsBtn{width:56px;height:56px}#settingsBtn img{width:46px;height:46px}}
+
+/* The command-block front texture is a vertical 4-face strip; crop it to one tile. */
+.bottom-nav button[data-page="command"] img{object-fit:cover;object-position:center}
+#settingsBtn img{width:68px;height:68px;max-width:none}
