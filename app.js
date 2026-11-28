@@ -173,7 +173,7 @@ const prepItems={
 };
 const emergencyItems=[['diamond_helmet','ダイヤモンドのヘルメット','diamond_helmet'],['diamond_chestplate','ダイヤモンドのチェストプレート','diamond_chestplate'],['diamond_leggings','ダイヤモンドのレギンス','diamond_leggings'],['diamond_boots','ダイヤモンドのブーツ','diamond_boots'],['fire_helmet','火炎耐性ヘルメット','golden_helmet'],['pick','シルクタッチのツルハシ','diamond_pickaxe'],['sword','剣','diamond_sword'],['shield','盾','shield'],['elytra','エリトラ','elytra'],['totems','不死のトーテム ×2','totem_of_undying'],['rockets','ロケット花火 ×256','firework_rocket'],['food','食料 ×64','cooked_beef'],['fire_potions','耐火のポーション（8分）×3','potion'],['night_potions','暗視のポーション（8分）×3','potion'],['pearls','エンダーパール ×16','ender_pearl'],['obsidian','黒曜石 ×10','obsidian'],['flint','火打石と打ち金','flint_and_steel'],['cobble','丸石 ×64','cobblestone'],['wood','木材 ×64','oak_planks']];
 const prepBase='https://assets.mcasset.cloud/1.21.4/assets/minecraft/textures/';
-const prepAssetPaths={shield:'entity/shield_base',torch:'block/torch',red_bed:'entity/bed/red',ender_chest:'entity/chest/ender',shulker_box:'entity/shulker/shulker',obsidian:'block/obsidian',cobblestone:'block/cobblestone',oak_planks:'block/oak_planks',chest:'block/chest_front'};
+const prepAssetPaths={shield:'entity/shield_base',torch:'block/torch',red_bed:'entity/bed/red',ender_chest:'entity/chest/ender',shulker_box:'entity/shulker/shulker',obsidian:'block/obsidian',cobblestone:'block/cobblestone',oak_planks:'block/oak_planks',chest:'entity/chest/normal'};
 function prepAsset(texture){return `${prepBase}${prepAssetPaths[texture]||`item/${texture}`}.png`}
 function prepState(){data.adventurePrep ||= {};return data.adventurePrep}
 function prepDone(key){return !!prepState()[key]}
